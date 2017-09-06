@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+#btn1 {
+	width:225px;
+	display: block;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin: 10px 0 10px 0;
+  background-color: #4ca3a0;
+}
+#btn1 {
+  color: transparent;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+#btn1:before {
+  display: block;
+    width:100%;
+  height:100%;
+  box-sizing: border-box;
+  content: url('app1.png');
+  background-color: #4ca3a0;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 800ms linear;
+  border-radius: 4px;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 100% 50% -20px;
+}
+#btn1:after {
+  display: block;
+  width:100%;
+  height:100%;
+  content: url(app2.png);
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5a5a5a;
+  color: #fff;
+  transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-180deg);
+  -o-transform: rotateX(-90deg);
+  transition: 800ms linear;
+  border-radius: 4px;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 100% 50% -20px;
+}
+#btn1.btn1:before {
+  transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -webkit-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+}
+#btn1.btn1:after {
+  transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+}
+	</style>
+</head>
+<body>
+	<button type="button" id="btn1" class="btn1" text="点击"></button>
+  <div id="container"></div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+$(function(){
+  $('#container').load('table.html');
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+//@mixin调用方式: @include flexbox();
+//flexbox-父元素	单个子元素可以垂直居中显示
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexbox-hc($pack:justify, $jc:space-between) {
+  //09版
+  -webkit-box-pack: $pack;
+  //box-pack: start | end | center | justify;
+  //主轴对齐：左对齐（默认） | 右对齐 | 居中对齐 | 左右对齐
+
+  //12版
+  -webkit-justify-content: $jc;
+  -moz-justify-content: $jc;
+  justify-content: $jc;
+  //justify-content: flex-start | flex-end | center | space-between;
+  //主轴对齐方式：左对齐（默认） | 右对齐 | 居中对齐 | 两端对齐
+}
+
+@mixin flexbox-vc($ba:center, $ai:center) {
+  //09版
+  -webkit-box-align: center;
+  //box-align: start | end | center | baseline | stretch;
+  //交叉轴对齐：顶部对齐（默认） | 底部对齐 | 居中对齐 | 文本基线对齐 | 上下对齐并铺满
+
+  //12版
+  -webkit-align-items: $ai;
+  -moz-align-items: $ai;
+  align-items: $ai;
+  //align-items: flex-start | flex-end | center | baseline | stretch;
+  //交叉轴对齐方式：顶部对齐（默认） | 底部对齐 | 居中对齐 | 上下对齐并铺满 | 文本基线对齐
+}
+
+//父元素-横向排列（主轴）
+@mixin flex-h {
+  //09版
+  -webkit-box-orient: horizontal;
+  //12版
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+}
+//父元素-横向换行
+@mixin flex-hw {
+  //09版
+  -webkit-box-lines: multiple;
+  //12版
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+//父元素-纵向排列（主轴）
+@mixin flex-v {
+  //09版
+  -webkit-box-orient: vertical;
+  //12版
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+}
+//父元素-纵向换行
+@mixin flex-vw {
+  //09版
+  -webkit-box-lines: multiple;
+  //12版
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+//flexbox-子元素
+//子元素-平均分栏
+@mixin flex($w:1) {
+  -webkit-box-flex: $w;
+  -moz-box-flex: $w;
+  -webkit-flex: $w;
+  flex: $w;
+}
+
+@mixin flexbox-og($og:1) {
+  -webkit-box-ordinal-group: $og;
+  -moz-box-ordinal-group: $og;
+  -webkit-order: $og;
+  order: $og;
+}
